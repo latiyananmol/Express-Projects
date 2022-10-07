@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ {{>headers}}
+  </head>
+  <body>
+    <div class="container-fluid main_menu">
+      <div class="row">
+       <div class="col-md-10 col-12 mx-auto">
+        <nav class="navbar navbar-expand-lg ">
+          <a class="navbar-brand" href="#"> <i class="fa-solid fa-snowflake"></i>  Weather App <i class="fa-solid fa-snowflake"></i></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/weather">weather</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+             
+            </ul>
+           
+          </div>
+        </nav>
+
+       </div>
+
+      </div>
+
+    </div>
+
+    <!-- main <header></header> -->
+    <div class="container-fluid main_header">
+      <div class="row">
+       <div class="col-md-10 col-12 mx-auto">
+     <div class="mainContent">
+        <form class="temp_form">
+            <input type="text" id="cityName" placeholder="Enter Your City Name" autocomplete="off">
+         <input type="submit" value="search" id="submitBtn">
+        </form>
+     </div>
+
+     <div class="tempInformation">
+        <div class="top_layer">
+            <p id="day"></p>
+            <p id="today_data"></p>
+        </div>
+
+<div class="main_layer ">
+    <p id="city_name">get output here</p>
+    <div class="middle_layer data_hide ">  
+
+        <p id="temp">       <span>K</span>   </p>
+        <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i> </p>
+
+      
+    </div>
+</div>
+
+     </div>
+
+
+
+        </div>
+      </div>
+    </div>  
+    
+
+    <!-- footer code -->
+   
+
+
+
+
+{{>atlast}}
+
+
+<script src="js/main.js"></script>
+
+<script>
+  const currentDay()=>{
+    const dayO=document.getElementById("day");
+
+    let weekDay=new Array();
+    weekDay[0]="sunday";
+       weekDay[1]="Monday";
+          weekDay[2]="Tuesday";
+             weekDay[3]="Wednesday";
+                weekDay[4]="Thrusday";
+                   weekDay[5]="Friday";
+                      weekDay[6]="Saturday";
+
+                      let currentTime=new Date();
+                      let day=weekDay[currentTime.getDay()];
+                   dayO.innerText=day;
+
+
+  }
+ 
+</script>
+  </body>
+</html>
